@@ -25,20 +25,32 @@ def testingData(index):
             return
             
             
-def selection_Sort(inputList):
-    lenOfList = len(inputList)
-    sortedList = []
-    for value in range(lenOfList):
-        smallestElement = inputList[0]
-        for subvalue in range(lenOfList):
-            newElement = inputList[subvalue]
-            if smallestElement > newElement:
-                smallestElement = newElement
-                del inputList[subvalue]
-        if smallestElement == inputList[0]:
-            del inputList[0]
+# This is less memory and time efficent, instead of swaping the elements, we have 2 list that we keep track of
             
-        sortedList.append(smallestElement)
+def selection_Sort(inputList):
+    sortedList = []
+    for value in range(len(inputList)):
+        smallestIndex = 0
+        for subvalue in range(len(inputList)):
+            if inputList[smallestIndex] > inputList[subvalue]:
+                smallestIndex = subvalue
+            
+        sortedList.append(inputList[smallestIndex])
+        del inputList[smallestIndex]
+        
     return sortedList
 
-print(selection_Sort(testingData(100)))
+# print(selection_Sort(testingData(100)))
+# Done
+
+def bubble_Sort(inputList):
+    change = True
+    while change: 
+        change = False
+        for elementIndex in range(len(inputList) - 1):
+            if inputList[elementIndex] > inputList[elementIndex + 1]:
+                change = True
+                inputList[elementIndex], inputList[elementIndex + 1 ] = inputList[elementIndex + 1 ], inputList[elementIndex]
+    return inputList
+
+print(bubble_Sort(testingData(100)))
