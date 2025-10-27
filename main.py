@@ -64,45 +64,34 @@ def bubble_sort(inputList):
 # Done
 
 
-# "Binding the list to a local name means assigning the parameter to a short local variable (e.g. a = inputList) and caching any frequently used values (like length or a method) before entering a tight loop. This reduces repeated lookups and function calls inside the loop, which is a small but measurable speed win in CPython because accessing local variables is faster than repeated attribute/global lookups or repeated calls to len()."
-def quick_sort(inputList):
-    a = inputList
     
-    def _partition(b):
-        
-        p = b[0]
-        s = []
-        if len(b) == 1: 
-            return
-        for i in b:
-            if p >= b:
-                s.insert(0, b)
-            else:
-                s.append(b)
-        return _partition
-    
-    
+
+
 # using letters as var is much easier to type, might be hard to read or confusing
 #this is hard
 
 def insertion_sort(inputList):
+    a = inputList
+    n = len(a)
+    # dont forget this section here 
+    if n < 2:
+        return a
     
-    def _sorting(inputList, index):
-        a = inputList
-        if index == len(a) - 1:
-            return a
-        s = True
-        p = index
-        while s:
-            s = False
-            if p > 0: 
-                if a[p-1] > a[p]:
-                    s = True
-                    a[p], a[p-1] = a[p-1], a[p]
-            p -= 1
-        return _sorting(a, index + 1 )
+    for i in range(1, n):
+        key = a[i]
+        e = i - 1
+        
+        while e >= 0 and a[e] > key:
+            a[e +1] = a[e]
+            e -= 1
+            
+        a[e + 1] = key
+    return a 
+        
+        
     
-    return _sorting(inputList, 1)
 # should avoid recursion to avoid recursion errors and coud be faster
+#it is much easier to type everyting when the var are just letters
+# print(insertion_sort([3,2,4,2,5,6,3]))
+# Done
 
-print(insertion_sort(testing_data(100)))
