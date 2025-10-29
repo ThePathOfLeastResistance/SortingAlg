@@ -102,5 +102,3 @@ def selection_sort(my_list):
                 break
         sorted_arrray.append(add_val)
     print(sorted_arrray)
-
-print(quick_sort(rando,0,len(rando)-1))
