@@ -39,7 +39,7 @@ def bubble_sort(my_list):
                 current = my_list[k]
                 my_list[k] = my_list[k+1]
                 my_list[k+1] = current
-    print(my_list)
+    return(my_list)
 
 def merge(first_half,second_half):
     ind = 0
@@ -68,7 +68,6 @@ def merge_sort(my_list, l, r):
    
     return my_list
 
-print(merge_sort(rando, 0, len(rando)))
 
 def partition(my_list,low,high):
     pivot = my_list[high]
@@ -82,11 +81,13 @@ def partition(my_list,low,high):
     return i+1
 
 def quick_sort(my_list,low,high):
+    high -= 1
+    #adjust for neg index
     if low<high:
         part = partition(my_list,low,high)
         quick_sort(my_list,low,part-1)
         quick_sort(my_list,part+1,high)
-    print(my_list)
+    return(my_list)
 
 def selection_sort(my_list):
     sorted_arrray=[]
@@ -101,4 +102,4 @@ def selection_sort(my_list):
                 add_val = remaining_array.pop(i)
                 break
         sorted_arrray.append(add_val)
-    print(sorted_arrray)
+    return(sorted_arrray)

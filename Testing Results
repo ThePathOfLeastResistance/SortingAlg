@@ -1,7 +1,51 @@
 function: insertion_sort,
  Data Size: 100,
  Memory: (139, 15641),
- Time: -0.0006415843963623047function: bubble_sort,
+ Time: 0.0006136894226074219
+
+ function: bubble_sort,
  Data Size: 100,
  Memory: (315, 15745),
- Time: -0.0010530948638916016
+ Time: 0.0008268356323242188
+
+ function: merge_sort,
+ Data Size: 100,
+ Memory: (118, 19260),
+ Time: 0.0023758411407470703
+
+ function: selection_sort,
+ Data Size: 100,
+ Memory: (59, 15529),
+ Time: 0.0008242130279541016
+
+ function: quick_sort,
+ Data Size: 100,
+ Memory: (118, 19228),
+ Time: 0.0005400180816650391
+
+ function: insertion_sort,
+ Data Size: 1000,
+ Memory: (59, 51641),
+ Time: 0.46101927757263184
+
+ function: bubble_sort,
+ Data Size: 1000,
+ Memory: (59, 51633),
+ Time: 0.6011195182800293
+
+ function: merge_sort,
+ Data Size: 1000,
+ Memory: (118, 88476),
+ Time: 0.05353736877441406
+
+ function: selection_sort,
+ Data Size: 1000,
+ Memory: (59, 51609),
+ Time: 0.22412800788879395
+
+ function: quick_sort,
+ Data Size: 1000,
+ Memory: (118, 88444),
+ Time: 0.010839223861694336
+
+ 
