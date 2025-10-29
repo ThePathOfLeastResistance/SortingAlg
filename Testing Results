@@ -1,0 +1,7 @@
+function: insertion_sort,
+ Data Size: 100,
+ Memory: (139, 15641),
+ Time: -0.0006415843963623047function: bubble_sort,
+ Data Size: 100,
+ Memory: (315, 15745),
+ Time: -0.0010530948638916016

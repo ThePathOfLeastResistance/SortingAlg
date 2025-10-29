@@ -60,15 +60,15 @@ def merge(first_half,second_half):
 def merge_sort(my_list, l, r):
     #merged_array = []
     if r>l:
-        middle = l + (r-1)//2
+        middle = (l + r-1)//2
         first_half = merge_sort(my_list,l,middle)
         second_half = merge_sort(my_list,middle+1,r)
         my_list = merge(first_half,second_half)
-        test = ""
         #merged_array = merge_sort(merged_array)
    
     return my_list
 
+print(merge_sort(rando, 0, len(rando)))
 
 def partition(my_list,low,high):
     pivot = my_list[high]

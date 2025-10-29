@@ -32,13 +32,16 @@ def testing_data(index):
 
 for i in testList:
     for f in funcList:
+        
         start = time.time()
         tracemalloc.start()
-        f(testing_data(i))
-        memory = tracemalloc.get_traced_memory
+        f(testing_data(i)) if f != merge_sort else f(testing_data(i), 0, len(testing_data(i)))
+        memory = tracemalloc.get_traced_memory()
         tracemalloc.stop()
         end = time.time()
         timeTaken = start - end
         
         with open("Testing Results", "a") as file:
-            file.write(f'function: {f}, Data Size: {i}, Memory: {memory}, Time: {timeTaken}')
+            file.write(f'function: {f.__name__},\n Data Size: {i},\n Memory: {memory},\n Time: {timeTaken}')
+            print("\n\n")
+    print("\n\n\n\n")
